@@ -14,8 +14,7 @@ public class YahooDoneWithPersonalInfoPage extends AbstractPage {
         super(driver);
     }
 
-    public YahooPersonalInfoEditPage doneChangingInfo(){
+    public void doneChangingInfo(){
         doneButton.click();
-        return new YahooPersonalInfoEditPage(driver);
     }
 }

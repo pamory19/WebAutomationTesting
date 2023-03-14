@@ -18,20 +18,18 @@ public class YahooChangePersonalInfoPage extends AbstractPage {
         super(driver);
     }
 
-    public YahooChangePersonalInfoPage changeFirstName() {
+    public void changeFirstName() {
         updatedFirstName.click();
         updatedFirstName.sendKeys(Keys.valueOf(Keys.chord(Keys.COMMAND, "a")));
         updatedFirstName.sendKeys(Keys.DELETE);
         updatedFirstName.type("Test103243");
-        return new YahooChangePersonalInfoPage(driver);
     }
 
-    public YahooChangePersonalInfoPage changeLastName() {
+    public void changeLastName() {
         updatedLastName.click();
         updatedLastName.sendKeys(Keys.valueOf(Keys.chord(Keys.COMMAND, "a")));
         updatedLastName.sendKeys(Keys.DELETE);
         updatedLastName.type("User103243");
-        return new YahooChangePersonalInfoPage(driver);
     }
 
 }

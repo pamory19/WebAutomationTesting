@@ -7,8 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
-import javax.xml.datatype.Duration;
 
 public class YahooHomePage extends AbstractPage {
 
@@ -22,10 +22,12 @@ public class YahooHomePage extends AbstractPage {
         super(driver);
     }
 
-    public YahooPersonalInfoEditPage accountSettings(){
+    public com.solvd.webautomationtesting.YahooPersonalInfoEditPage accountSettings(){
         Actions actions = new Actions(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(accountSetting.getBy()));
         actions.moveToElement(accountMenu.getElement()).perform();
         accountSetting.click();
-        return new YahooPersonalInfoEditPage(driver);
+        return new com.solvd.webautomationtesting.YahooPersonalInfoEditPage(driver);
     }
 }
